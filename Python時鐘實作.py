@@ -18,7 +18,7 @@ class Clock(object):  # 定義一個clock的class
                 if self.hour == 24:  # 當時數24，時數歸0
                     self.hour = 0
 
-    def show(self):  #定 義show(顯示時間)的方法
+    def show(self):  #定義show(顯示時間)的方法
         return '%02d : %02d : %02d' % (self.hour, self.minute, self.second)
         # 用於將時間格式化為‘%02d : %02d : %02d’的形式，其中%02d表示整數佔兩位，不足兩位時在前面補0
         # (self.hour, self.minute, self.second) 分別表示時、分、秒，用於填充佔位符%

@@ -7,7 +7,7 @@ while True:
         break  # 密碼正確，跳出迴圈
     else:
         user_try = user_try - 1  # 計算使用次數
-        print('輸入錯誤，你還有', user_try, '次機會')
+        print(f'輸入錯誤，你還有 {user_try} 次機會')
         if user_try == 0:
             print('輸入太多次錯誤，帳號已被鎖定！')
             break  # 輸入太多次錯誤，跳出迴圈

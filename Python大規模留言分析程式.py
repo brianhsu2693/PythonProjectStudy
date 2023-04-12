@@ -13,7 +13,7 @@ len_sum = 0  # 建立計算長度，從0開始
 for d in data:  # 宣告一個變數d採用for loop去一筆一筆讀取data清單
     len_sum += len(d)  # 在for迴圈裡，將d每次遍歷出來的留言長度相加在一起
 print(f'全部留言字數總和為 {len_sum} 字母')  # 列印全部留言長度
-print(f'每筆留言平均字數為 {int((len_sum / len(data)))} 字母')  #將全部留言長度/全部留言筆數，並使用int取整數
+print(f'每筆留言平均字數為 {int((len_sum / len(data)))} 字母')  # 將全部留言長度/全部留言筆數，並使用int取整數
 
 new_100 = []  # 建立空的篩選清單
 for d in data:  # 宣告一個變數d採用for loop去一筆一筆讀取data清單

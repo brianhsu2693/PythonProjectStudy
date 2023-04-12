@@ -1,0 +1,3 @@
+Hello, world!
+i love Python
+程式語言是透過一堆規則制訂出來的。

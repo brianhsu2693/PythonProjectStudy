@@ -22,7 +22,7 @@ for d in data:  # 宣告一個變數d採用for loop去一筆一筆讀取data清�
 print(f'留言低於100個字數的有 {len(new_100)} 筆')  # 列印留言長度小於100的筆數
 
 good = []  # 建立空的篩選清單
-for d in data:
-    if 'good' in d:
-        good.append(d)
-print(f'留言提到good的有 {len(good)} 筆')
+for d in data:  # 宣告一個變數d採用for loop去一筆一筆讀取data清單
+    if 'good' in d:  # 如果讀取出來檢查有good字串
+        good.append(d)  # 就新增到good篩選清單中
+print(f'留言提到good的有 {len(good)} 筆')  # 列印留言提到good關鍵字的筆數

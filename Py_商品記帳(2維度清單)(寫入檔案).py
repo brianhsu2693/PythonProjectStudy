@@ -19,5 +19,6 @@ for p in projects:  # 宣告一個變數p，使用for loop將projects清單內�
     print(f'{p[0]}價格是{p[1]}元')  # 列印出每個取出的小清單內的數值
 
 with open('products.csv', 'w') as f:  # 打開一個檔案並預定使用寫入功能，將該檔案暫時命名為f
+    f.write('商品,價格\n')
     for p in projects:  # 使用變數P去把projects清單內資料一個個取出
         f.write(p[0] + ',' + p[1] + '\n')  # 將變數p取到的每一筆資料，參照指定的格式寫入f檔案裡

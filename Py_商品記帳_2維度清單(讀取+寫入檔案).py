@@ -3,6 +3,8 @@ projects = []  # 宣告一個空的清單
 # 讀取外部檔案
 with open('products.csv', 'r', encoding='utf-8') as f:  # 開啟products.csv檔案，用utf-8讀取並命名為f
     for line in f:  # 設立line變數並使用for loop來讀取f的內容
+        if '產品,價格' in line:  # 判斷'產品,價格'抬頭，如果有的話就跳過迴圈
+            continue  # continue跳下一個迴圈的意思(通常都寫在迴圈很高的位置)
         name, price = line.strip().split(',')  # 讀取出來的內容去\n跟使用逗號做切割，並存回name與price裡
         projects.append([name, price])  # 用[name, price]小清單的模式裝入projects[]大清單中
 print(projects)

@@ -20,7 +20,7 @@ while True:  # 使用無限迴圈來執行
     p = [name, price]  # 建立1個小清單p，把用戶輸入的name跟price裝進p小清單
     projects.append(p)  # 把p小清單裝到projects大清單
 
-# 列印清單檔案
+# 列印清單資料
 print(f'清單中的項目有：{projects}')
 print(f'清單中總共有{len(projects)}個商品')
 print('--------- 分隔線1 ---------')

@@ -18,6 +18,6 @@ print('--------- 分隔線 ---------')
 for p in projects:  # 宣告一個變數p，使用for loop將projects內的資料一個個取出
     print(f'{p[0]}價格是{p[1]}元')  # 列印出每個取出的小清單內的數值
 
-with open('products', 'w') as f:
+with open('products.csv', 'w') as f:
     for p in projects:
-        f.write(p[0] + ', ' + p[1] + '\n')
+        f.write(p[0] + ',' + p[1] + '\n')

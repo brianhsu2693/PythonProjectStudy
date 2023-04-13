@@ -15,9 +15,9 @@ print('--------- 分隔線 ---------')
 print(f'第一個商品的名稱為：{projects [0][0]}')  # 把projects大清單中的第1格內的第1格拿出來
 print(f'第一個商品的價格為：{projects [0][1]}')  # 把projects大清單中的第1格內的第2格拿出來
 print('--------- 分隔線 ---------')
-for p in projects:  # 宣告一個變數p，使用for loop將projects內的資料一個個取出
+for p in projects:  # 宣告一個變數p，使用for loop將projects清單內的資料一個個取出
     print(f'{p[0]}價格是{p[1]}元')  # 列印出每個取出的小清單內的數值
 
-with open('products.csv', 'w') as f:
-    for p in projects:
-        f.write(p[0] + ',' + p[1] + '\n')
+with open('products.csv', 'w') as f:  # 打開一個檔案並預定使用寫入功能，將該檔案暫時命名為f
+    for p in projects:  # 使用變數P去把projects清單內資料一個個取出
+        f.write(p[0] + ',' + p[1] + '\n')  # 將變數p取到的每一筆資料，參照指定的格式寫入f檔案裡

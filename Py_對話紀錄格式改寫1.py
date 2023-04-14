@@ -7,6 +7,7 @@ def read_file(file_name):  # 建立read_file function
             lines.append(line.strip())  # 將line讀取出來的資料去除\n，再裝進lines清單
     return lines  #記得！ 要回傳出來！
 
+
 # 檔案內文格式轉換
 def convert(lines):  # 建立轉換function
     new = []  # 建立一個空清單
@@ -22,11 +23,13 @@ def convert(lines):  # 建立轉換function
             new.append(person + '：' + line)
     return new  # 回傳new清單
 
+
 # 寫入檔案
 def write_file(file_name, lines):  # 定義write_file寫入 function
     with open(file_name, 'w', encoding='utf-8') as f:  # 打開檔案並指定為f檔名
         for line in lines:  # 使用line變數去一行行的讀取lines清單
             f.write(line + '\n')  # 將讀取的資料加上\換行符號來寫入f檔案
+
 
 # 建立主要的main function
 def main():

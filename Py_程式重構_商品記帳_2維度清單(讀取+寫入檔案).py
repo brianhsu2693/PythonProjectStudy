@@ -1,5 +1,5 @@
 #(1)將原程式法重新分析並進行重構
-#(2)設計5個function來呈現清晰架構
+#(2)設計6個function來呈現清晰架構
 
 # 1.檢查檔案
 def check_file(file_name):
@@ -53,7 +53,7 @@ def write_file(file_name, products):
         for p in products:  # 使用變數P去把projects清單內資料一個個取出
             f.write(p[0] + ',' + p[1] + '\n')  # 將變數p取到的每一筆資料，參照指定的格式寫入f檔案裡
 
-# main() function，程式執行進入點
+# 6.程式執行進入點 main() function
 def main():
     check_file('products.csv')  # ()填入要檢查的檔案名
     products = read_file('products.csv')  # ()填入要讀取的檔案名

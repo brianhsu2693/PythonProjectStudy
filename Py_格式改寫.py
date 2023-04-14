@@ -38,7 +38,7 @@ def main():
     return lines  # 回傳lines變數資料
 
 
-# 執行main function並列印出來
+# 執行main function(檢查同目錄下有沒有產生新的檔案)
 main()
 
 

@@ -1,27 +1,26 @@
 #(1)將原程式法重新分析並進行重構
 #(2)設計4個function來呈現清晰架構
 
-# 讀取外部檔案
-def read_file(file_name):
-    products = []  # 宣告一個空的清單
+# 檢查檔案
+def check_file(file_name):
     import os
     if os.path.isfile(file_name):  # 檢查products.csv有沒有在資料夾內
         print('找到檔案！開始執行！')
-
-    # Yes → 讀取外部檔案
-        with open(file_name, 'r', encoding='utf-8') as f:  # 開啟products.csv檔案，用utf-8讀取並命名為f
-            for line in f:  # 設立line變數並使用for loop來讀取f的內容
-                if '產品,價格' in line:  # 判斷清單的'產品,價格'抬頭，如果有的話就跳過迴圈
-                    continue  # continue跳下一個迴圈的意思(通常都寫在迴圈很高的位置)
-                name, price = line.strip().split(',')  # 讀取出來的內容去\n跟使用逗號做切割，並存回name與price裡
-                products.append([name, price])  # 用[name, price]小清單的模式裝入projects[]大清單中
-        print(products)
-        print(f'清單中總共有{len(products)}個商品')
-        return products  # (很重要)function最後一行記得將寫在清單內的資料回傳出來
-
-    # No → 提示訊息
     else:
         print('找不到檔案，請協助卻認同目錄下是否有該檔案！')
+
+# 讀取外部檔案
+def read_file(file_name):
+    products = []  # 宣告一個空的清單
+    with open(file_name, 'r', encoding='utf-8') as f:  # 開啟products.csv檔案，用utf-8讀取並命名為f
+        for line in f:  # 設立line變數並使用for loop來讀取f的內容
+            if '產品,價格' in line:  # 判斷清單的'產品,價格'抬頭，如果有的話就跳過迴圈
+                continue  # continue跳下一個迴圈的意思(通常都寫在迴圈很高的位置)
+            name, price = line.strip().split(',')  # 讀取出來的內容去\n跟使用逗號做切割，並存回name與price裡
+            products.append([name, price])  # 用[name, price]小清單的模式裝入projects[]大清單中
+    print(products)
+    print(f'清單中總共有{len(products)}個商品')
+    return products  # (很重要)function最後一行記得將寫在清單內的資料回傳出來
 
 # 用戶輸入資料並寫入清單中
 def user_input(products):
@@ -54,7 +53,9 @@ def write_file(file_name, products):
         for p in products:  # 使用變數P去把projects清單內資料一個個取出
             f.write(p[0] + ',' + p[1] + '\n')  # 將變數p取到的每一筆資料，參照指定的格式寫入f檔案裡
 
+
 # function執行區
+check_file('products.csv')
 products = read_file('products.csv')  # 因為執行結果有回傳資料回來，所以要宣告個變數來存下來
 products = user_input(products)  # 因為執行結果有回傳資料回來，所以要宣告個變數來存下來
 print_products(products)  # 無回傳值，故直接執行

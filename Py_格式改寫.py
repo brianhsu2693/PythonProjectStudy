@@ -37,7 +37,7 @@ def main():
     return lines  # 回傳lines變數資料
 
 
-# 執行function並列印出來
+# 執行main function並列印出來
 main()
 
 

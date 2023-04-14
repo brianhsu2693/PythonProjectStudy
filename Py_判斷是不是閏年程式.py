@@ -10,7 +10,7 @@ def is_leap(year):  # 宣告1個is_leap function
     else:
         return False
 
-while True:
+while True:  # 設立一個重複輸入的迴圈
     keyin_year = input('請輸入要查詢的年份，或輸入 q 退出程序：')  # 設計用戶輸入位置
     if keyin_year == 'q':  # 如果用戶輸入q就退出程序
         break

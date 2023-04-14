@@ -53,13 +53,16 @@ def write_file(file_name, products):
         for p in products:  # 使用變數P去把projects清單內資料一個個取出
             f.write(p[0] + ',' + p[1] + '\n')  # 將變數p取到的每一筆資料，參照指定的格式寫入f檔案裡
 
+# main() function，程式執行進入點
+def main():
+    check_file('products.csv')  # ()填入要檢查的檔案名
+    products = read_file('products.csv')  # ()填入要讀取的檔案名
+                                          # 因為程式執行結果有回傳資料回來，所以要宣告個變數來存下來
+    products = user_input(products)  # ()填入要存入的清單名，因為用戶輸入的資料要往清單內存放
+                                     # 因為程式執行結果有回傳資料回來，所以要宣告個變數來存下來
+    print_products(products)  # ()填入要列印的清單名
+                              # 無回傳值，故直接執行
+    write_file('products.csv', products)  # 無回傳值，故直接執行
 
-# function執行區
-check_file('products.csv')  # ()填入要檢查的檔案名
-products = read_file('products.csv')  # ()填入要讀取的檔案名
-                                      # 因為程式執行結果有回傳資料回來，所以要宣告個變數來存下來
-products = user_input(products)  # ()填入要存入的清單名，因為用戶輸入的資料要往清單內存放
-                                 # 因為程式執行結果有回傳資料回來，所以要宣告個變數來存下來
-print_products(products)  # ()填入要列印的清單名
-                          # 無回傳值，故直接執行
-write_file('products.csv', products)  # 無回傳值，故直接執行
+# 執行程式
+main()

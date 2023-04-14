@@ -11,12 +11,12 @@ def read_file(file_name):  # 建立read_file function
 # 檔案內文格式轉換
 def convert(lines):  # 建立轉換function
     person = None  # person初始化為無值
-    allen_word_count = 0  # allen說的字數初始化0
-    viki_word_count = 0  # viki說的字數初始化0
-    allen_sticker_count = 0  # allen的貼圖初始化0
-    viki_sticker_count = 0  # viki的貼圖初始化0
-    allen_image_count = 0  # allen的貼圖初始化0
-    viki_image_count = 0  # viki的貼圖初始化0
+    allen_word_count = 0  # allen說的字數初始化為0
+    viki_word_count = 0  # viki說的字數初始化為0
+    allen_sticker_count = 0  # allen的貼圖初始化為0
+    viki_sticker_count = 0  # viki的貼圖初始化為0
+    allen_image_count = 0  # allen的貼圖初始化為0
+    viki_image_count = 0  # viki的貼圖初始化為0
 
     for line in lines:  # 使用line變數去一行行的讀取lines清單
         s = line.split(' ')  # 使用.split切割line讀出來的每句話(切割點為空白)
@@ -24,7 +24,7 @@ def convert(lines):  # 建立轉換function
         name = s[1]  # lines清單取出來的資料，第2格是名字
 
         if name == 'Allen':  # 如果名字是allen
-            if s[2] == '貼圖':  #接著看看第3格對話內容資料有沒有貼圖
+            if s[2] == '貼圖':  # 接著看看第3格對話內容資料有沒有貼圖
                 allen_sticker_count += 1  # 有的話+1做計數
             elif s[2] == '圖片':  # 接著看看第3格對話內容資料有沒有圖片
                 allen_image_count += 1  # 有的話+1做計數
@@ -32,7 +32,7 @@ def convert(lines):  # 建立轉換function
                 for m in s[2:]:
                     allen_word_count += len(m)
 
-        elif name == 'Viki':  #同allen方式做判斷與計數
+        elif name == 'Viki':  # 同allen方式做判斷與計數
             if s[2] == '貼圖':
                 viki_sticker_count += 1
             elif s[2] == '圖片':

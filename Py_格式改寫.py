@@ -22,10 +22,11 @@ def convert(lines):  # 建立轉換function
             new.append(person + '：' + line)
     return new  # 回傳new清單
 
-def write_file(file_name, lines):
-    with open(file_name, 'w', encoding='utf-8') as f:
-        for line in lines:
-            f.write(line + '\n')
+# 寫入檔案
+def write_file(file_name, lines):  # 定義write_file寫入 function
+    with open(file_name, 'w', encoding='utf-8') as f:  # 打開檔案並指定為f檔名
+        for line in lines:  # 使用line變數去一行行的讀取lines清單
+            f.write(line + '\n')  # 將讀取的資料加上\換行符號來寫入f檔案
 
 # 建立主要的main function
 def main():
@@ -33,7 +34,7 @@ def main():
                                    # 然後將結果存到lines變數
     lines = convert(lines)  # 使用convert function來轉換內文格式，並在()中填入要轉換的lines清單
 
-    write_file('chat_output.txt', lines)  # 使用write_file function來寫入檔案，()中指定新增的檔案名與要投入寫檔案功能運算的來源
+    write_file('chat_output.txt', lines)  # 使用write_file function來寫入檔案，()中指定新增的檔案名稱與要投入寫檔案功能運算的來源
     return lines  # 回傳lines變數資料
 
 

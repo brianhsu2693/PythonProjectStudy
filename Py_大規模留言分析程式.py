@@ -1,14 +1,21 @@
+import time  # 匯入時間模組
+
+
 # 1.讀取檔案與進度顯示(每2000顯示1次)
 # 2.統計全部留言筆數
 # 3.統計第一筆留言字數
+# 4.加入時間模組來記錄檔案讀取時間
 data = []  # 建立空的留言清單
 count = 0  # 建立計數器，從0開始
+start_time = time.time()  # 使用time模組的time功能，將讀取出來的資訊存入start_time變數
 with open('reviews.txt', 'r') as f:  # 使用with oppen讀取檔案並將檔案宣告成f
     for line in f:  # 宣告一個line變數，使用for loop一行行的讀取f檔案
         data.append(line)  # 將line讀取到的資料寫入data清單中
         count += 1  # 上面每寫1筆，計數器+1
         if count % 2000 == 0:  # 每當計數器數字除以2000餘數等於0時，則列印當下長度
             print(len(data))
+end_time = time.time()  # 使用time模組的time功能，將讀取出來的資訊存入end_time變數
+print(f'讀取檔案總共花了 {end_time - start_time} 秒')  # end_time - start_time = 總共花的時間
 print(f'總共有：{len(data)} 筆留言')  # 列印清單長度
 print(f'第一筆留言字數為 {len(data[0])} 字母')
 

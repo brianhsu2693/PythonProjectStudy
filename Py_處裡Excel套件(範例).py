@@ -5,7 +5,7 @@ wb = Workbook()
 ws = wb.active
 
 # Data can be assigned directly to cells
-ws['A1'] = 42
+ws['A1'] = 26
 ws['A2'] = 'Brian'
 
 # Rows can also be appended

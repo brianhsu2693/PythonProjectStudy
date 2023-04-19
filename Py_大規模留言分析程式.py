@@ -1,6 +1,5 @@
 import time  # 匯入時間模組
 
-
 # 1.讀取檔案與進度顯示(每2000顯示1次)
 # 2.統計全部留言筆數
 # 3.統計第一筆留言字數
@@ -13,8 +12,9 @@ with open('reviews.txt', 'r') as f:  # 使用with oppen讀取檔案並將檔案�
         data.append(line)  # 將line讀取到的資料寫入data清單中
         count += 1  # 上面每寫1筆，計數器+1
         if count % 2000 == 0:  # 每當計數器數字除以2000餘數等於0時，則列印當下長度
-            print(len(data))
+            print(f'已讀取 {len(data)} 個單字')
 end_time = time.time()  # 使用time模組的time功能，將讀取出來的資訊存入end_time變數
+print()  # 螢幕輸出，換行排版用
 print(f'讀取檔案總共花了 {end_time - start_time} 秒')  # end_time - start_time = 總共花的時間
 print(f'總共有：{len(data)} 筆留言')  # 列印清單長度
 print(f'第一筆留言字數為 {len(data[0])} 字母')
@@ -56,16 +56,20 @@ for d in data:  # d是1筆留言(字串); data是筆201506筆的總清單
                                    # 字典名稱xxx[key_name] 為查詢字典內的資料
         else:
             word_count[word] = 1  # 不然就，新增word(new_key)進入word_count字典，並設立對應值為1。 範例{word:1}
+print()  # 螢幕輸出，換行排版用
 print(f'word_count 字典內，總共有 {len(word_count)} 個單字')  # 列印字典全部的單字數量
 
 
 # 9.列出出現次數超過12萬次的單字
+print('出現超過15萬次的單字如下顯示')
 for word in word_count:  # 使用word變數去一行行讀取word_count
-    if word_count[word] > 150000:  # 如果讀取出來的word值大於12萬 ↓就列印出word_key與word_value
-        print(word, word_count[word])
+    if word_count[word] > 150000:  # 如果讀取出來的word值大於15萬 ↓就列印出word_key與word_value
+        print(f'「{word}」出現過 {word_count[word]} 次')
 
 
 # 10.查詢單字出現過的次數
+print()  # 螢幕輸出，換行排版用
+print('下列輸入字串來查詢單字出現過的次數 (q 離開查詢)')
 while True:  # 設立一個無限迴圈
     key_word = input('請輸入查詢字：')  # 將用戶所輸入的查詢單字存入key_word變數中
     if key_word == 'q':  # 先設立離開點，避免key_word跟q字串一樣而困住出不去
@@ -74,4 +78,4 @@ while True:  # 設立一個無限迴圈
         print(f'{key_word} 總共出現過 {word_count[key_word]} 次')  # 列印出該單字(key)與對應的次數(value)
     else:
         print('查無此單字，請重新輸入')  # 不然就提示用戶查無此單字，並且重新跑迴圈讓用戶填寫
-print('感謝使用本查詢功能！')
+print('離開查詢，感謝使用本查詢功能！')

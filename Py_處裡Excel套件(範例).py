@@ -1,5 +1,6 @@
 from openpyxl import Workbook
-wb = Workbook()
+wb = Workbook()  # 使用Workbook()，並存為wb變數
+                 # 以利後續使用wb變數來呼叫各種function來使用
 
 # grab the active worksheet
 ws = wb.active

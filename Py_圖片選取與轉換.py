@@ -1,11 +1,13 @@
-from PIL import Image  # 匯入Pillow圖像處理套件
+from PIL import Image  # 匯入Pillow圖像處理套件中的Image物件
 import os  # 匯入os套件
 
-pic = Image.open('merlin_superJumbo.png')  # 使用Image物件的open function來開啟指定的圖片('填入檔名')
-print(f'檔案格式：{pic.format} \n圖片尺寸：{pic.size} \n圖片模組：{pic.mode}')  # 列印圖檔資訊(格式、尺寸、模組)
-pic = pic.convert('L')  # 使用convert fouction的L指令來將圖片轉換為黑白照片，轉換完畢後存回pic變數中
-pic.show()  # 開啟修改後的圖片
-pic.save('testing.png')  # 把修改後的圖片另存為'指定檔名'的圖片
+for file in os.listdir('.'):  # 使用os套件裡的listdir function把資料夾內的檔案列出來('.'指定當下位置)，並使用file變數去一個個讀取
+    if file.endswith('.png'):  # 使用endswith function(字串功能)來讀取結尾是.png的檔名
 
-for file in os.listdir('.'):  # 設立file變數並使用os套件裡的listdir fouction把'.'指定位置的資料夾裡面的檔案都讀取過
-    print(file)
+        pic = Image.open(file)  # 使用Image物件的open function來開啟指定的圖片(file)，然後存入pic變數
+        print(f'檔案格式：{pic.format} \n圖片尺寸：{pic.size} \n圖片模組：{pic.mode}')  # 列印圖檔資訊(格式、尺寸、模組)
+        pic = pic.convert('L')  # 使用convert function的L指令來將圖片轉換為黑白照片，轉換完畢後存回pic變數中
+        pic.save(file[:-4] + '_grey.png')  # 把修改後的pic(圖片)使用save function來另存為'指定檔名'的圖片
+                                           # [:-4]使用清單分割法來決定要拿取的字串(:就是從0開始拿取，-4就是拿到倒數第4個字就停止)
+                                           # 最後使用字串相加法，加上'指定的字串'
+

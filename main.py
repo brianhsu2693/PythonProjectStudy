@@ -28,6 +28,7 @@ def main():
         sleep(1)  # 等待1秒
         clock_A.run()  # 時鐘運作，持續前進1秒
 
+
 if __name__ == '__main__':
     main()
 

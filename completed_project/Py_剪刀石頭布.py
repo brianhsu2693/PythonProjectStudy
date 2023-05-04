@@ -26,7 +26,7 @@ scissors = '''
 '''
 
 import random  # 導入隨機模組
-data = [rock, paper, scissors]  # 把剪刀石頭布樁入一個data清單中，後續可以做索引對照
+data = [rock, paper, scissors]  # 把剪刀石頭布裝入一個data清單中，後續可以做索引對照
 
 ask_user = int(input('What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors. '))  # 用戶輸入並把內容轉為整數
 if ask_user in [0, 1, 2]:  # 檢查用戶輸入的內容有沒有在[0,1,2]清單裡面

@@ -4,7 +4,7 @@ row3 = ['⬜️','️⬜️','️⬜️']
 map = [row1, row2, row3]
 print(map)
 print(f'{row1}\n{row2}\n{row3}')
-position = input('Where do you want to put ? ')  # 用戶輸入2位數字代表要選擇的位置
+position = input('Where do you want to put? ')  # 用戶輸入2位數字代表要選擇的位置
 
 x = int(position[0])  # 索引[0]找出用戶輸入的第1個數字，並轉換成整數，然後存為變數x
                       # x代表索引第幾個子清單

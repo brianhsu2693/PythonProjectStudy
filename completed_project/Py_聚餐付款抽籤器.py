@@ -10,4 +10,4 @@ names_len = len(names)
 payer_num = random.randint(0, names_len - 1)
 payer = names[payer_num]
 
-print(f'{payer} is going to buy the meal today!')
+print(f'{payer} is going to buy the meal today! ')

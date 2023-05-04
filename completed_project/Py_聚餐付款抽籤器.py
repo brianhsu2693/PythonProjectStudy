@@ -11,4 +11,4 @@ payer_num = random.randint(0, names_len - 1)  # 使用.randint()function來來�
                                               # ()中的0為起始，names_len-1為清單結尾
 payer = names[payer_num]  # 將抽出來的數字帶入names清單做索引，並存入payer變數作為抽出來的付款人
 
-print(f'{payer} is going to buy the meal today! ')
+print(f'{payer} is going to buy the meal today!  ')

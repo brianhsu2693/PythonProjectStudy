@@ -1,6 +1,6 @@
 # 輸入學生身高資料，範例：156 178 165 171 187
 # 使用.split()來切割字串，並存入student_heights清單
-# 使用列表解析來將字串的列表轉換成整數的列表
+# 使用列表解析將清單的字串轉換成整數
 student_heights = input("Input a list of student heights：\n").split()
 student_heights = [int(n) for n in student_heights]
 

@@ -1,9 +1,12 @@
 # 字母表
 # 重複兩次是為了能夠索引字母表尾部位移後的字母
 alphabet = [
-'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w',
+    'x', 'y', 'z',
+    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w',
+    'x', 'y', 'z'
 ]
+
 
 # 設計1個加密function
 # 新增1個空的加密字串(用來存放遍歷並位移完成的字母)
@@ -37,6 +40,7 @@ def decrypt(user_text, user_shift):
         else:
             decrypt_text += i
     print(f'The encoded text is {decrypt_text}')
+
 
 # 設立While迴圈來重複執行
 # 用戶輸入加解密指令，若輸入的不是'encode'和'decode'，做錯誤告知提示

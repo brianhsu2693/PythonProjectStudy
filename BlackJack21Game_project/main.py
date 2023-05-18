@@ -125,6 +125,6 @@ def play_game():
     print(compare(user_score, computer_score))
 
 
-# 提示14：詢問用戶是否要重新啟動遊戲。如果他們回答是，請清除控制台並開始新的二十一點遊戲並顯示 art.py 中的徽標。
+# 詢問用戶是否要重新啟動遊戲。如果他們回答y則啟動遊戲
 while input('你想玩二十一點遊戲嗎？ 請輸入 \'y\' 或 \'n\': ') == 'y':
     play_game()

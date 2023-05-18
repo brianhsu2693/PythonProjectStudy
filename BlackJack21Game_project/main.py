@@ -1,26 +1,12 @@
-############### Blackjack規則 #####################
-
-##牌堆的大小無限制。
-##沒有小丑牌。
-##J、Q、K都計為10分。
-##A可以計為11或1分。
-##使用以下列表作為牌組：
-##cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-##列表中的牌被抽中的機會相等。
-##抽到的牌不會從牌組中移除。
-##電腦扮演莊家的角色。
-
-##################### 提示 #####################
-
-#  提示1：訪問以下網站，試玩Blackjack遊戲：
-#  https://games.washingtonpost.com/games/blackjack/
-#  然後在這裡試玩已完成的Blackjack項目：
-#  http://blackjack-final.appbrewery.repl.run
-#  提示2：閱讀此程序要求的分解：
-#  http://listmoz.com/view/6h34DJpvJBFVRlZfJvxF
-#  然後嘗試為該程序創建自己的流程圖。
-#  提示3：下載並閱讀我創建的流程圖：
-#  https://drive.google.com/uc?export=download&id=1rDkiHCrhaf9eX7u7yjM1qwSuyEk-rPnt
+###### Blackjack規則 ######
+# 牌堆的大小無限制
+# 沒有小丑牌
+# J、Q、K都計為10分
+# A可以計為11或1分
+# 使用cards清單作為牌組 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+# 清單中的牌被抽中的機會相等
+# 抽到的牌不會從牌組中移除
+# 電腦扮演莊家的角色
 
 
 # 匯入random隨機模組
@@ -53,8 +39,10 @@ def calculate_score(cards):
     return sum(cards)
 
 
-# 創建為compare()的函式，並傳入user_score和computer_score。如果電腦和使用者的得分相同，則是平局。如果電腦有一個21點（黑杰克），那麼使用者輸了。
-# 如果使用者有一個21點（黑杰克），那麼使用者贏了。如果使用者得分超過21，那麼使用者輸了。如果電腦得分超過21，那麼電腦輸了。如果以上情況都不符合，則得分最高的玩家獲勝。
+# 創建為compare()的函式，並傳入user_score和computer_score
+# 如果電腦和玩家的得分相同，則是平局。如果電腦有一個21點(黑傑克)，那麼玩家輸了
+# 如果玩家有一個21點(黑傑克)，那麼玩家贏了。如果玩家得分超過21，那麼玩家輸了
+# 如果電腦得分超過21，那麼電腦輸了。如果以上情況都不符合，則得分最高的玩家獲勝
 def compare(user_score, computer_score):
     '''比較牌面大小'''
     if user_score == computer_score:
@@ -75,10 +63,10 @@ def compare(user_score, computer_score):
         return '對手贏了😤'
 
 
-# 創建名為play_game()的函式，做為開始遊戲。
+# 創建名為play_game()的函式，做為開始遊戲
 def play_game():
     '''開始遊戲'''
-    # 建立用戶卡牌的空清單與電腦卡牌的空清單
+    # 建立玩家卡牌的空清單與電腦卡牌的空清單
     # 預設結束遊戲為False
     print(logo)
     user_cards = []
@@ -91,10 +79,10 @@ def play_game():
         user_cards.append(deal_card())
         computer_cards.append(deal_card())
 
-    # 設立while無限迴圈來重複執行用戶端的抽牌邏輯(遊戲尚未結束is_game_over=False的情況下)
+    # 設立while無限迴圈來重複執行玩家端的抽牌邏輯(遊戲尚未結束is_game_over=False的情況下)
     # 調用calculate_score()函式來計算user分數並存成user_score變數
     # 調用calculate_score()函式來計算computer分數並存成computer_score變數
-    # 列印用戶的牌與分數；列印電腦的第1張牌
+    # 列印玩家的牌與分數；列印電腦的第1張牌
     while not is_game_over:
         user_score = calculate_score(user_cards)
         computer_score = calculate_score(computer_cards)
@@ -103,9 +91,9 @@ def play_game():
         print()
 
         # 如果user或computer擁有0(等於黑傑克21點)或user超過21點，就結束遊戲
-        # 如果遊戲還沒有結束，詢問用戶是否要再抽一張牌
-        # 如果用戶填「y」，則使用deal_card()函式來抽牌並append()添加到user_cards清單內
-        # 如果用戶填「n」，則遊戲結束
+        # 如果遊戲還沒有結束，詢問玩家是否要再抽一張牌
+        # 如果玩家填「y」，則使用deal_card()函式來抽牌並append()添加到user_cards清單內
+        # 如果玩家填「n」，則遊戲結束
         if user_score == 0 or computer_score == 0 or user_score > 21:
             is_game_over = True
         else:
@@ -115,7 +103,7 @@ def play_game():
             else:
                 is_game_over = True
 
-    # 用戶完成後就輪到電腦抽牌了，設立while迴圈，只要電腦分數不等於0(黑傑克21點)和分數小於17就執行迴圈內容
+    # 玩家完成後就輪到電腦抽牌了，設立while迴圈，只要電腦分數不等於0(黑傑克21點)和分數小於17就執行迴圈內容
     # 電腦抽新牌並調用calculate_score()函式來重新計算電腦的分數，計算後的分數並存回computer_score變數
     while computer_score != 0 and computer_score < 17:
         computer_cards.append(deal_card())
@@ -125,6 +113,6 @@ def play_game():
     print(compare(user_score, computer_score))
 
 
-# 詢問用戶是否要重新啟動遊戲。如果他們回答y則啟動遊戲
+# 詢問玩家是否要重新啟動遊戲。如果他們回答y則啟動遊戲
 while input('你想玩二十一點遊戲嗎？ 請輸入 \'y\' 或 \'n\': ') == 'y':
     play_game()
